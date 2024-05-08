@@ -1,10 +1,12 @@
-import { DUMMY_NEWS } from "@/dymmy-news";
+import { DUMMY_NEWS } from "@/dummy-news";
 import { notFound } from "next/navigation";
 
 export default function Page({ params }) {
+    // Find the news by slug
     const news = DUMMY_NEWS.find((news) => news.slug === params.slug);
 
     if (!news) {
+        // Redirect to the 404 page if the news is not found
         notFound();
     }
 
