@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import LinkHeader from "./LinkHeader";
 export default function Header() {
     return (
         <header id="main-header">
@@ -9,7 +9,10 @@ export default function Header() {
             <nav>
                 <ul>
                     <li>
-                        <Link href="/news">News</Link>
+                        <LinkHeader href="/news">News</LinkHeader>
+                    </li>
+                    <li>
+                        <LinkHeader href="/archive">Archive</LinkHeader>
                     </li>
                 </ul>
             </nav>
