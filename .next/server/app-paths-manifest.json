@@ -1,5 +1,7 @@
 {
   "/news/[slug]/page": "app/news/[slug]/page.js",
   "/news/page": "app/news/page.js",
+  "/news/[slug]/image/page": "app/news/[slug]/image/page.js",
+  "/news/[slug]/(.)image/page": "app/news/[slug]/(.)image/page.js",
   "/archive/@archive/[[...filter]]/page": "app/archive/@archive/[[...filter]]/page.js"
 }
