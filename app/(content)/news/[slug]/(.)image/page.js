@@ -1,9 +1,9 @@
-import { DUMMY_NEWS } from "@/dummy-news";
 import { notFound } from "next/navigation";
+import { getNewsItem } from "@/lib/news";
 
-export default function ImagePage({ params }) {
+export default async function ImagePage({ params }) {
     // Find the news by slug
-    const newsItem = DUMMY_NEWS.find((news) => news.slug === params.slug);
+    const newsItem = await getNewsItem(params.slug);
 
     if (!newsItem) {
         // Redirect to the 404 page if the news is not found

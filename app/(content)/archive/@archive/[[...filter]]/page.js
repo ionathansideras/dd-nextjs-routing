@@ -9,8 +9,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 // this is a dynamic route page gets all the routes that are dynamic
-export default function YearPage({ params }) {
-    let links = getAvailableNewsYears();
+export default async function YearPage({ params }) {
+    let links = await getAvailableNewsYears();
 
     // filter holds an array of the dynamic route segments
     const filter = params.filter;
@@ -26,15 +26,13 @@ export default function YearPage({ params }) {
 
     if (selectedMonth) {
         // get news for the selected year and month
-        news = getNewsForYearAndMonth(selectedYear, selectedMonth);
+        news = await getNewsForYearAndMonth(selectedYear, selectedMonth);
         links = [];
     } else if (selectedYear) {
         // get news for the selected year
-        news = getNewsForYear(selectedYear);
+        news = await getNewsForYear(selectedYear);
         links = getAvailableNewsMonths(selectedYear);
     }
-
-    console.log(links);
 
     return (
         <>
